@@ -22,6 +22,7 @@ type Config struct {
 	StripeKey            string
 	StripeSecret         string
 	StripeWebhookSecret  string
+	FrontendURL          string
 	SupabaseURL          string
 	SupabaseKey          string
 	SupabaseStorageBucket string
@@ -71,6 +72,7 @@ func CheckAndSetConfig(configPath, configName string) *Config {
 		StripeKey:            GetEnv("STRIPE_PUBLISHABLE_KEY", ""),
 		StripeSecret:         GetEnv("STRIPE_SECRET_KEY", ""),
 		StripeWebhookSecret:  GetEnv("STRIPE_WEBHOOK_SECRET", ""),
+		FrontendURL:          GetEnv("FRONTEND_URL", "http://localhost:3000"),
 		SupabaseURL:          GetEnv("SUPABASE_URL", ""),
 		SupabaseKey:          GetEnv("SUPABASE_KEY", ""),
 		SupabaseStorageBucket: GetEnv("SUPABASE_STORAGE_BUCKET", "cases-files"),
